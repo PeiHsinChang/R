@@ -1,0 +1,57 @@
+---
+title: "實作 R Markdown"
+author: "Pei-Hsin"
+date: '2022-05-16'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE)
+```
+
+### R Markdown
+
+更多資訊-> [R Markdown](http://rmarkdown.rstudio.com)
+
+### 簡單的統計分析
+
+```{r cars }
+summary(cars)
+```
+
+### Plots 的用法
+
+R內建的作圖。
+
+```{r pressure,echo = FALSE }
+plot(x = pressure$temperature, y = pressure$pressure,
+     xlab = "temperature", ylab = "pressure",  
+     main = "pressure plot", 
+     col = 5) 
+```
+
+### 讀入csv檔案
+
+導入資料集
+
+```{r}
+    fileName = "/Users/admin/Downloads/addresses.csv"
+    addresses = read.csv(file = fileName)
+```
+
+### 利用ggplot2繪圖
+
+
+```{r mpg }
+library(ggplot2)  ## 匯入ggplot2 函式庫
+ggplot(mpg, aes(displ, hwy, colour = class)) + 
+  geom_point()
+```
+
+### 資料輸出
+
+查看addresses資料。
+
+```{r}
+addresses
+```
